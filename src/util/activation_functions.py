@@ -22,18 +22,17 @@ class Activation:
         return 1 / (1 + exp(-netOutput))
     @staticmethod
     def sigmoidPrime(netOutput):
-        # Here you have to code the derivative of sigmoid function
-        # netOutput.*(1-netOutput)
-        pass
+        # This is not really the derivative of the sigmoid function, but an adaptation
+        return netOutput*(1-netOutput)
 
     @staticmethod
     def tanh(netOutput):
-        pass
+        return 1.0-(1.0/(1.0+np.exp(2.0*netOutput)))
         
     @staticmethod
     def tanhPrime(netOutput):
-        # Here you have to code the derivative of tanh function
-        pass
+        # Again, the derivative is 1-tanh^2
+        return 1.0-netOutput^2
 
     @staticmethod
     def rectified(netOutput):
